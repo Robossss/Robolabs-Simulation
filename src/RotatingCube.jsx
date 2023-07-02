@@ -1,30 +1,18 @@
-import React, { useRef } from "react";
-import { useFrame } from "react-three-fiber";
-import { useBox } from "@react-three/cannon";
+import React, { Component } from "react";
+import { RigidBody } from "@react-three/rapier";
+import { Mesh, MeshStandardMaterial, BoxGeometry } from "three";
 
-export default function RotatingCube() {
-  const meshRef = useRef(null);
-  const [boxRef, api] = useBox(() => ({ mass: 1 }));
+class RotatingCube extends Component {
+  render() {
+    return (
+      <RigidBody position={[0, 0, 0]}>
+        <mesh receiveShadow>
+          <boxGeometry args={[1, 1, 1]} />
+          <meshStandardMaterial color={"red"} />
+        </mesh>
+      </RigidBody>
+    );
+  }
+}
 
-  useFrame(() => {
-    if (meshRef.current) {
-      meshRef.current.rotation.x += 0.01;
-      meshRef.current.rotation.y += 0.01;
-      meshRef.current.rotation.z += 0.01;
-    }
-  });
-
-  const handleCollision = (event) => {
-    console.log("Cube collided with:", event.body);
-    // Handle the collision event here
-  };
-
-  return (
-    <mesh ref={meshRef}>
-      <boxBufferGeometry args={[1, 1, 1]} />
-      <meshStandardMaterial color="red" />
-      <primitive ref={boxRef} object={null} />
-      <meshCollisionEvents onCollide={handleCollision} />
-    </mesh>
-  );
-};
+export default RotatingCube;

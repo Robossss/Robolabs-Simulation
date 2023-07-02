@@ -12,6 +12,7 @@ import FloatingPlatform from "./FloatingPlatform.jsx";
 import DynamicPlatforms from "./DynamicPlatforms.jsx";
 import { useControls } from "leva";
 import RotatingCube from "./RotatingCube";
+import Actor from "./actor.jsx";
 
 export default function Experience() {
   /**
@@ -59,12 +60,14 @@ export default function Experience() {
         </KeyboardControls>
 
         {/* <RotatingCube /> */}
+        <Actor/>
 
         {/* Rough plan */}
         <RoughPlane />
 
         {/* Slopes and stairs */}
         <Slopes />
+
 
         {/* Small steps */}
         <Steps />
