@@ -2,13 +2,13 @@ import React, { useRef, useEffect } from "react";
 import { useFrame, useThree } from "react-three-fiber";
 import * as THREE from "three";
 
-const Actor = () => {
+var Actor = () => {
   const meshRef = useRef();
   const { scene } = useThree();
 
   useEffect(() => {
     const geometry = new THREE.BoxGeometry(1, 1, 1);
-    const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
+    const material = new THREE.MeshBasicMaterial({ color: 0x00550 });
     const mesh = new THREE.Mesh(geometry, material);
     mesh.rotateY(Math.PI);
 
@@ -36,9 +36,19 @@ const Actor = () => {
     };
   }, [scene]);
 
+    const startConsume = (instructions) => {
+      // this.instructions = instructions;
+      // if(this.instructions.length>0){
+      //     this.currentInstruction = this.instructions.shift();
+      //     this._consumeCommandsNew(this.currentInstruction);
+      // }else{
+      //     console.log("no instructions to execute");
+      // }
+
+    }
      // Update function to consume commands
-    const consumeCommands = (hhh) => {
-      console.log(hhh)
+    const consumeCommands = (mmm) => {
+      // console.log('hello')
       // const mesh = meshRef.current;
       // if (mesh.currentInstruction) {
       //   let instruction = mesh.currentInstruction;
@@ -88,6 +98,9 @@ const Actor = () => {
       //   }
       // }
     };
+
+
+
 
     // Set the consumeCommands function as an update function
     useFrame(() => {

@@ -13,8 +13,16 @@ import DynamicPlatforms from "./DynamicPlatforms.jsx";
 import { useControls } from "leva";
 import RotatingCube from "./RotatingCube";
 import Actor from "./actor.jsx";
+import TestCharacter from "./testcharacter.js";
+
+function TestCharacterComponent() {
+  const testCharacter = new TestCharacter(); // Create an instance of TestCharacter
+
+  return <primitive object={testCharacter.getMesh()} />;
+}
 
 export default function Experience() {
+  const testCharacter = new TestCharacter()
   /**
    * Debug settings
    */
@@ -60,10 +68,13 @@ export default function Experience() {
         </KeyboardControls>
 
         {/* <RotatingCube /> */}
-        <Actor/>
+        {/* <Actor/> */}
+        <TestCharacterComponent />
+
 
         {/* Rough plan */}
         <RoughPlane />
+  
 
         {/* Slopes and stairs */}
         <Slopes />
