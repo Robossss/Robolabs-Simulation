@@ -39,19 +39,19 @@ export default class TestCharacter {
         }
     }
 
-    startConsume(instructions){
-        console.log(instructions)
-        this.instructions = instructions;
-        if(this.instructions.length>0){
-            this.currentInstruction = this.instructions.shift();
-            this._consumeCommandsNew(this.currentInstruction);
-        }else{
-            console.log("no instructions to execute");
-        }
+startConsume(instructions) {
+    this.instructions = instructions;
+    if (this.instructions.length > 0) {
+        this.currentInstruction = this.instructions.shift();
+        console.log("Starting instruction:", this.currentInstruction);
+        this._consumeCommandsNew();
+    } else {
+        console.log("No instructions to execute");
     }
+}
+    
 
     _consumeCommandsNew(){
-        console.log("i am being called")
         if(this.currentInstruction){
             let instruction = this.currentInstruction;
             let movementType = instruction["type"];
@@ -183,6 +183,8 @@ export default class TestCharacter {
 
         console.log(this.mesh.position);
     }
+
+    
 
     update(time){
         this._consumeCommandsNew();

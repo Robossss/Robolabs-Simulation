@@ -7,7 +7,50 @@ import * as THREE from "three";
 import { useControls } from "leva";
 import useFollowCam from "./hooks/useFollowCam";
 
-export default function Character() {
+function globalFunction() {
+  return {
+    forward: true,
+    backward: false,
+    leftward: false,
+    rightward: false,
+    jump: false,
+    run: false,
+  };
+  
+  console.log("This is a global function.");
+  // let key = instruction["type"];
+  // let val = instruction["value"];
+  // switch(key){
+  //   case "move_forward":
+  //     return(true,false,false,false,false,false);
+  //   break;
+  //   case "move_backwards":
+  //     return(false,true,false,false,false,false);
+  //   break;
+  }
+  // Your function code here
+
+
+
+window.onload = function() {
+  window.globalFunction = globalFunction;
+};
+
+// export function directions(instruction){
+//   console.log("yes Daddy")
+//   // let key = instruction["type"];
+//   // let val = instruction["value"];
+//   // switch(key){
+//   //   case "move_forward":
+//   //     return(true,false,false,false,false,false);
+//   //   break;
+//   //   case "move_backwards":
+//   //     return(false,true,false,false,false,false);
+//   //   break;
+//   // }
+// }
+
+export function Character() {
   const characterRef = useRef();
   const characterModelRef = useRef();
 
@@ -344,7 +387,14 @@ export default function Character() {
     /**
      * Getting all the useful keys from useKeyboardControls
      */
-    const { forward, backward, leftward, rightward, jump, run } = getKeys();
+
+    const { forward, backward, leftward, rightward, jump, run } = globalFunction();
+    console.log('fhhhf')
+    console.log(getKeys())
+
+    
+    // console.log("here")
+    // console.log(forward, backward, leftward, rightward, jump, run)
 
     // Getting moving directions
 

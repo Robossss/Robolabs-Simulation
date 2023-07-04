@@ -1,7 +1,7 @@
 import { Grid, KeyboardControls, OrbitControls } from "@react-three/drei";
 import { Perf } from "r3f-perf";
 import { Physics } from "@react-three/rapier";
-import Character from "./Character.jsx";
+import {Character} from "./Character.jsx";
 import Floor from "./Floor.jsx";
 import Lights from "./Lights.jsx";
 import Steps from "./Steps.jsx";
