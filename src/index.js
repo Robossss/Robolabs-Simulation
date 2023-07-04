@@ -1,47 +1,33 @@
 // import {directions} from "./Character.jsx"
 
+window.globalVariable ='a'
 
-// function globalFunction() {
-//   // Your function code here
-//   console.log("This is a global function.");
-// }
+function setGlobalVariable(value) {
+    window.globalVariable = value;
+  }
 
-// window.onload = function() {
-//   window.globalFunction = globalFunction;
-// };
-
-
+window.onload = function() {
+  window.hello = hello;
+};
 
 
-// window.global = 'hhhhh'
-let instructions=['llll'];
 
-// window.load_blockly = function(blockly) {
-//   console.log('blockly dildo')
-//     // init the game only after window.Blockly definition
-// }
+let instructions=[];
+
+
 
 window.blockly_loaded = function(blockly) {
-// console.log('Huge dildo')
-// init the game only after window.Blockly definition
 window.Blockly = blockly;
 defineActions();
-// console.log('Garden gnome')
-// console.log(window.global)
-// console.log('Gardern gnome')
 };
 
+console.log(globalVariable)
 window.run_code = function() {
-// instructions=[];
-var code = window.Blockly.JavaScript.workspaceToCode(window.Blockly.mainWorkspace);
-// eval(code);
-console.log(instructions)
-window.globalFunction()
-// console.log(directions(instructions))
-// directions('lll')
-// startConsume(instructions);
+    instructions=[];
+    var code = window.Blockly.JavaScript.workspaceToCode(window.Blockly.mainWorkspace);
+    eval(code);
+    setGlobalVariable(instructions[0]["type"]);
 };
-
 
 
 function defineActions(){

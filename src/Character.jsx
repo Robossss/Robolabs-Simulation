@@ -7,48 +7,30 @@ import * as THREE from "three";
 import { useControls } from "leva";
 import useFollowCam from "./hooks/useFollowCam";
 
-function globalFunction() {
-  return {
-    forward: true,
-    backward: false,
-    leftward: false,
-    rightward: false,
-    jump: false,
-    run: false,
-  };
-  
-  console.log("This is a global function.");
-  // let key = instruction["type"];
-  // let val = instruction["value"];
-  // switch(key){
-  //   case "move_forward":
-  //     return(true,false,false,false,false,false);
-  //   break;
-  //   case "move_backwards":
-  //     return(false,true,false,false,false,false);
-  //   break;
+
+
+// return {forward: true,backward: false,leftward: false,rightward: false,jump: false,run: false,};
+
+function globalFunction(key) {
+  key = String(key)
+  if(key == "move_forward"){
+    console.log(true,false,false,false,false,false,); 
+    return {forward: true,backward: false,leftward: false,rightward: false,jump: false,run: false,};
   }
-  // Your function code here
-
-
-
-window.onload = function() {
-  window.globalFunction = globalFunction;
-};
-
-// export function directions(instruction){
-//   console.log("yes Daddy")
-//   // let key = instruction["type"];
-//   // let val = instruction["value"];
-//   // switch(key){
-//   //   case "move_forward":
-//   //     return(true,false,false,false,false,false);
-//   //   break;
-//   //   case "move_backwards":
-//   //     return(false,true,false,false,false,false);
-//   //   break;
-//   // }
-// }
+  else if(key=="turn"){
+    console.log(false,false,true,false,false,false,); 
+    return {forward: false,backward: false,leftward: true,rightward: false,jump: false,run: false,};
+  }
+  else if(key=="move_backward"){
+    console.log(false,true,false,false,false,false,);
+    return {forward: false,backward: true,leftward: false,rightward: false,jump: false,run: false,};
+  }
+  else {
+    return {forward: false,backward: false,leftward: false,rightward: false,jump: false,run: false,};
+  }
+  
+  }
+ 
 
 export function Character() {
   const characterRef = useRef();
@@ -388,9 +370,10 @@ export function Character() {
      * Getting all the useful keys from useKeyboardControls
      */
 
-    const { forward, backward, leftward, rightward, jump, run } = globalFunction();
-    console.log('fhhhf')
-    console.log(getKeys())
+    const { forward, backward, leftward, rightward, jump, run } = globalFunction(window.globalVariable)
+    // globalFunction(window.globalVariable)
+    // console.log(window.globalVariable)
+
 
     
     // console.log("here")
