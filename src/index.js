@@ -10,23 +10,53 @@ window.onload = function() {
   window.hello = hello;
 };
 
-
-
 let instructions=[];
 
+function delay(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
 
+async function _StartConsume(instructions) {
+    while (instructions.length > 0) {
+      var currentInstruction = instructions.shift();
+      console.log(currentInstruction["type"]);
+      setGlobalVariable(currentInstruction["type"]);
+      await delay(3000);
+    }
+    setGlobalVariable("do_nothing")
+    console.log("no instructions to execute");
+  }
+  
 
 window.blockly_loaded = function(blockly) {
 window.Blockly = blockly;
 defineActions();
 };
 
+function getValue(name) {
+    if (name === 'ppp') {
+      // Return the name for 5 seconds
+      const startTime = new Date().getTime();
+      const endTime = startTime + 5000;
+  
+      while (new Date().getTime() < endTime) {
+        // Return the name
+        return name;
+      }
+  
+      // Return the age
+      const age = 25;
+      return age;
+    }
+  }
+
 console.log(globalVariable)
 window.run_code = function() {
     instructions=[];
     var code = window.Blockly.JavaScript.workspaceToCode(window.Blockly.mainWorkspace);
     eval(code);
-    setGlobalVariable(instructions[0]["type"]);
+    _StartConsume(instructions)
+    // setGlobalVariable(instructions[0]["type"]);
 };
 
 

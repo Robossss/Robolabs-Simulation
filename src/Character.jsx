@@ -11,10 +11,11 @@ import useFollowCam from "./hooks/useFollowCam";
 
 // return {forward: true,backward: false,leftward: false,rightward: false,jump: false,run: false,};
 
+
+
 function globalFunction(key) {
   key = String(key)
   if(key == "move_forward"){
-    console.log(true,false,false,false,false,false,); 
     return {forward: true,backward: false,leftward: false,rightward: false,jump: false,run: false,};
   }
   else if(key=="turn"){
@@ -24,6 +25,14 @@ function globalFunction(key) {
   else if(key=="move_backward"){
     console.log(false,true,false,false,false,false,);
     return {forward: false,backward: true,leftward: false,rightward: false,jump: false,run: false,};
+  }
+  else if(key=="jump_forward"){
+    console.log(false,true,false,false,false,false,);
+    return {forward: true,backward: false,leftward: false,rightward: false,jump: true,run: false,};
+  }
+  else if(key=="do_nothing"){
+    console.log(false,true,false,false,false,false,);
+    return {forward: false,backward: false,leftward: false,rightward: false,jump: false,run: false,};
   }
   else {
     return {forward: false,backward: false,leftward: false,rightward: false,jump: false,run: false,};
