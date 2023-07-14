@@ -2,7 +2,7 @@ import * as THREE from "three";
 import { useFrame } from "@react-three/fiber";
 import { useRef } from "react";
 
-export function RotatingCube() {
+export function RotatingCube2() {
   const rotatePlatformRef = useRef();
 
   useFrame(({ clock }) => {
@@ -17,9 +17,9 @@ export function RotatingCube() {
   });
 
   return (
-    <mesh ref={rotatePlatformRef} position={[8.9,0.3,8.9]}>
+    <mesh ref={rotatePlatformRef} position={[0,0.3,8.9]}>
       <boxGeometry args={[1, 1, 1]} />
-      <meshStandardMaterial color={"red"} transparent={true} opacity={0.89} />
+      <meshStandardMaterial color={"blue"} transparent={true} opacity={0.89} />
     </mesh>
   );
 }

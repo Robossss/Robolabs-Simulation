@@ -28,7 +28,7 @@ export default function DynamicPlatforms() {
 
     // Rotate platform
     rotatePlatformRef.current.setNextKinematicRotation(
-      quaternionRotation.setFromAxisAngle(yRotationAxies, time * 0.5)
+      quaternionRotation.setFromAxisAngle(yRotationAxies, time * 2)
     );
 
     // Rotate drum

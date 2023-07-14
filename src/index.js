@@ -1,10 +1,11 @@
-// import {directions} from "./Character.jsx"
+
 
 window.globalVariable ='a'
 
 function setGlobalVariable(value) {
     window.globalVariable = value;
   }
+
 
 window.onload = function() {
   window.hello = hello;
@@ -20,8 +21,23 @@ async function _StartConsume(instructions) {
     while (instructions.length > 0) {
       var currentInstruction = instructions.shift();
       console.log(currentInstruction["type"]);
+      var s = currentInstruction["value"]
+      console.log(s)
       setGlobalVariable(currentInstruction["type"]);
-      await delay(3000);
+      // await delay(1000*(s/2));
+      if (currentInstruction["type"]=="jump_forward"){
+        await delay(1000*(s/2));
+      }
+      else if (currentInstruction["type"]=="move_forward") {
+        await delay(1000*s);
+      }
+      else if (currentInstruction["type"]=="move_backward") {
+        await delay(1000*s);
+      }
+      else {
+        await delay(2000);
+
+      }
     }
     setGlobalVariable("do_nothing")
     console.log("no instructions to execute");
@@ -50,7 +66,7 @@ function getValue(name) {
     }
   }
 
-console.log(globalVariable)
+// console.log(globalVariable)
 window.run_code = function() {
     instructions=[];
     var code = window.Blockly.JavaScript.workspaceToCode(window.Blockly.mainWorkspace);
@@ -60,16 +76,35 @@ window.run_code = function() {
 };
 
 
+window.reset_car = function() {
+  resetCharacterPosition()
+ 
+
+};
+
+
+
 function defineActions(){
 window.Blockly.JavaScript['actor_move_forward'] = function(block) {
     var dropdown_actor_move_forward_distance = block.getFieldValue('actor_move_forward_distance');
     var code = "instructions.push({type:'move_forward',value:"+dropdown_actor_move_forward_distance+"});";
     return code;
 };
+window.Blockly.JavaScript['actor_move_backward'] = function(block) {
+  var dropdown_actor_move_backward_distance = block.getFieldValue('actor_move_backward_distance');
+  var code = "instructions.push({type:'move_backward',value:"+dropdown_actor_move_backward_distance+"});";
+  return code;
+};
 
 window.Blockly.JavaScript['actor_turn'] = function(block) {
     var direction = block.getFieldValue('actor_turn_direction');
-    var code = "instructions.push({type:'turn',value:'"+direction+"'});";
+    if (direction == "turnLeft"){
+      var code = "instructions.push({type:'turnLeft',value:''});";
+    }
+    else{
+      var code = "instructions.push({type:'turnRight',value:''});";
+    }
+    
     return code;
 };
 

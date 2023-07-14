@@ -18,20 +18,24 @@ function globalFunction(key) {
   if(key == "move_forward"){
     return {forward: true,backward: false,leftward: false,rightward: false,jump: false,run: false,};
   }
-  else if(key=="turn"){
-    console.log(false,false,true,false,false,false,); 
+  else if(key=="turnLeft"){
+    // console.log(false,false,true,false,false,false,); 
     return {forward: false,backward: false,leftward: true,rightward: false,jump: false,run: false,};
   }
+  else if(key=="turnRight"){
+    // console.log(false,false,true,false,false,false,); 
+    return {forward: false,backward: false,leftward: false,rightward: true,jump: false,run: false,};
+  }
   else if(key=="move_backward"){
-    console.log(false,true,false,false,false,false,);
+    // console.log(false,true,false,false,false,false,);
     return {forward: false,backward: true,leftward: false,rightward: false,jump: false,run: false,};
   }
   else if(key=="jump_forward"){
-    console.log(false,true,false,false,false,false,);
+    // console.log(false,true,false,false,false,false,);
     return {forward: true,backward: false,leftward: false,rightward: false,jump: true,run: false,};
   }
   else if(key=="do_nothing"){
-    console.log(false,true,false,false,false,false,);
+    // console.log(false,true,false,false,false,false,);
     return {forward: false,backward: false,leftward: false,rightward: false,jump: false,run: false,};
   }
   else {
@@ -39,11 +43,43 @@ function globalFunction(key) {
   }
   
   }
- 
+
+
+
+
+window.position = [0, 3, 0];
 
 export function Character() {
+
   const characterRef = useRef();
   const characterModelRef = useRef();
+
+
+
+
+
+
+
+
+
+  function resetCharacterPosition() { 
+    const position = new THREE.Vector3();
+    position.x = 0 
+    position.y = 5
+    position.z = 0
+
+  // Set the position of the character using characterRef
+  // characterRef.current.setEnabled(true)
+  characterRef.current.setTranslation(position);
+    console.log(position)
+    
+  }
+  
+window.resetCharacterPosition = resetCharacterPosition
+
+
+
+
 
   /**
    * Debug settings
@@ -58,6 +94,7 @@ export function Character() {
     airDragMultiplier,
     dragDampingC,
     accDeltaTime,
+    Mass,
   } = useControls("Character controls", {
     maxVelLimit: {
       value: 5,
@@ -113,7 +150,15 @@ export function Character() {
       max: 50,
       step: 1,
     },
+    Mass: {
+      value: 1,
+      min: 1,
+      max: 6,
+      step: 1,
+    },
   });
+
+
 
   const { rayLength, rayDir, floatingDis, springK, dampingC } = useControls(
     "Floating Ray",
@@ -222,6 +267,7 @@ export function Character() {
   const currentVel = useMemo(() => new THREE.Vector3());
   const dragForce = useMemo(() => new THREE.Vector3());
   const wantToMoveVel = useMemo(() => new THREE.Vector3());
+  const getWorldPosition = useMemo(() => new THREE.Vector3());
 
   /**
    * Floating Ray setup
@@ -306,8 +352,10 @@ export function Character() {
 
     // Wanted to move force function: F = ma
     const moveForceNeeded = moveAccNeeded.multiplyScalar(
-      characterRef.current.mass()
+      characterRef.current.mass()*Mass
     );
+    // console.log(characterRef.current.translation().x)
+    
 
     /**
      * Check if character complete turned to the wanted direction
@@ -357,10 +405,13 @@ export function Character() {
     // Move character at proper direction and impulse
     characterRef.current.applyImpulse(moveImpulse, true);
   };
+  
+  
 
   useEffect(() => {
     // Lock character rotations at any axis
     characterRef.current.lockRotations(true);
+
   }, []);
 
   useFrame((state, delta) => {
@@ -380,11 +431,16 @@ export function Character() {
      */
 
     const { forward, backward, leftward, rightward, jump, run } = globalFunction(window.globalVariable)
-    // globalFunction(window.globalVariable)
-    // console.log(window.globalVariable)
+    
+    
+    // console.log()
+    
 
 
     
+
+
+
     // console.log("here")
     // console.log(forward, backward, leftward, rightward, jump, run)
 
@@ -420,6 +476,10 @@ export function Character() {
 
     };
     // direction( true, false, false, false, false, false )
+    // resetCharacterPosition()
+    // console.log(characterRef.current.translation().x)
+    // characterRef.current.translation().
+    // console.log(characterRef.current.translation().x)
 
     direction( forward, backward, leftward, rightward, jump, run )
 
@@ -636,7 +696,7 @@ export function Character() {
   return (
     <RigidBody
       colliders={false}
-      position={[0, 3, 0]}
+      position={[5,3,0]}
       friction={-0.5}
       ref={characterRef}
     >

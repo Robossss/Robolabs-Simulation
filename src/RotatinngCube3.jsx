@@ -2,8 +2,12 @@ import * as THREE from "three";
 import { useFrame } from "@react-three/fiber";
 import { useRef } from "react";
 
-export function RotatingCube() {
+export function RotatingCube3() {
   const rotatePlatformRef = useRef();
+
+  const handleCollision = () => {
+    setIsVisible(true); // Hide the cube
+  };
 
   useFrame(({ clock }) => {
     const time = clock.getElapsedTime();
@@ -17,9 +21,9 @@ export function RotatingCube() {
   });
 
   return (
-    <mesh ref={rotatePlatformRef} position={[8.9,0.3,8.9]}>
+    <mesh ref={rotatePlatformRef} position={[5,0.3,0]}>
       <boxGeometry args={[1, 1, 1]} />
-      <meshStandardMaterial color={"red"} transparent={true} opacity={0.89} />
+      <meshStandardMaterial color={"green"} transparent={true} opacity={0.7} />
     </mesh>
   );
 }

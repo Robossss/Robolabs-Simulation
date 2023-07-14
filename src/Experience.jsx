@@ -11,18 +11,13 @@ import RigidObjects from "./RigidObjects.jsx";
 import FloatingPlatform from "./FloatingPlatform.jsx";
 import DynamicPlatforms from "./DynamicPlatforms.jsx";
 import { useControls } from "leva";
-import RotatingCube from "./RotatingCube";
-import Actor from "./actor.jsx";
-import TestCharacter from "./testcharacter.js";
+import {RotatingCube} from "./RotatingCube.jsx"
+import { RotatingCube2 } from "./RotatingCubes2.jsx";
+import { RotatingCube3 } from "./RotatinngCube3.jsx";
 
-function TestCharacterComponent() {
-  const testCharacter = new TestCharacter(); // Create an instance of TestCharacter
-
-  return <primitive object={testCharacter.getMesh()} />;
-}
 
 export default function Experience() {
-  const testCharacter = new TestCharacter()
+
   /**
    * Debug settings
    */
@@ -59,17 +54,16 @@ export default function Experience() {
       <Lights />
 
       <Physics debug={physics} timeStep="vary" >
-        {/* Character */}
-        {/* <KeyboardControls map={keyboardMap}>
-          <Character />
-        </KeyboardControls> */}
+
         <KeyboardControls map={keyboardMap}>
           <Character />
         </KeyboardControls>
 
-        {/* <RotatingCube /> */}
-        {/* <Actor/> */}
-        <TestCharacterComponent />
+        <RotatingCube/>
+        <RotatingCube2/>
+        <RotatingCube3/>
+   
+
 
 
         {/* Rough plan */}

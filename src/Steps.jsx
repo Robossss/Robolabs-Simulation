@@ -1,6 +1,18 @@
-import { RigidBody } from "@react-three/rapier";
+// import { RigidBody } from "@react-three/rapier";
+import { useKeyboardControls } from "@react-three/drei";
+import { useFrame } from "@react-three/fiber";
+import { RigidBody, CapsuleCollider, useRapier } from "@react-three/rapier";
+import { useEffect } from "react";
+import { useRef, useMemo, useState } from "react";
+import * as THREE from "three";
+import { useControls } from "leva";
+import useFollowCam from "./hooks/useFollowCam";
+
 
 export default function Steps() {
+  const characterRef = useRef();
+  const characterModelRef = useRef();
+  console.log(characterModelRef)
   return (
     <>
       {/* Small steps */}
