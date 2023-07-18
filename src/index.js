@@ -11,6 +11,8 @@ window.onload = function() {
   window.hello = hello;
 };
 
+window.a = true
+
 let instructions=[];
 
 function delay(ms) {
@@ -20,9 +22,9 @@ function delay(ms) {
 async function _StartConsume(instructions) {
     while (instructions.length > 0) {
       var currentInstruction = instructions.shift();
-      console.log(currentInstruction["type"]);
+      // console.log(currentInstruction["type"]);
       var s = currentInstruction["value"]
-      console.log(s)
+      // console.log(s)
       setGlobalVariable(currentInstruction["type"]);
       // await delay(1000*(s/2));
       if (currentInstruction["type"]=="jump_forward"){
@@ -76,10 +78,11 @@ window.run_code = function() {
 };
 
 
-window.reset_car = function() {
+window.reset_car = async function() {
+  setGlobalVariable("move_forward");
+  await delay(10);
   resetCharacterPosition()
- 
-
+  setGlobalVariable("do_nothing");
 };
 
 

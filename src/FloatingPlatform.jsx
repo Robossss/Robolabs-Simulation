@@ -57,6 +57,7 @@ export default function FloatingPlatform() {
       floatingPlateRef.current,
       floatingPlateRef.current
     );
+    // console.log(floatingPlateRef2.current)
     // Ray cast for platform 2
     origin2.set(
       floatingPlateRef2.current.translation().x,
@@ -73,6 +74,8 @@ export default function FloatingPlatform() {
       floatingPlateRef2.current,
       floatingPlateRef2.current
     );
+
+    // console.log(rayHit2)
 
     /**
      * Apply floating force

@@ -11,7 +11,8 @@ import useFollowCam from "./hooks/useFollowCam";
 
 // return {forward: true,backward: false,leftward: false,rightward: false,jump: false,run: false,};
 
-
+let cha;
+export {cha}
 
 function globalFunction(key) {
   key = String(key)
@@ -54,25 +55,14 @@ export function Character() {
   const characterRef = useRef();
   const characterModelRef = useRef();
 
-
-
-
-
-
-
-
-
   function resetCharacterPosition() { 
     const position = new THREE.Vector3();
     position.x = 0 
     position.y = 5
     position.z = 0
-
-  // Set the position of the character using characterRef
-  // characterRef.current.setEnabled(true)
   characterRef.current.setTranslation(position);
-    console.log(position)
-    
+  console.log(characterRef.current)
+
   }
   
 window.resetCharacterPosition = resetCharacterPosition
@@ -80,6 +70,8 @@ window.resetCharacterPosition = resetCharacterPosition
 
 
 
+
+const cube2bb = new THREE.Box3(new THREE.Vector3(), new THREE.Vector3());
 
   /**
    * Debug settings
@@ -241,6 +233,9 @@ window.resetCharacterPosition = resetCharacterPosition
   const movingObjectVelocityInCharacterDir = useMemo(() => new THREE.Vector3());
   const distanceFromCharacterToObject = useMemo(() => new THREE.Vector3());
   const objectAngvelToLinvel = useMemo(() => new THREE.Vector3());
+  const pos = [];
+
+
 
   /**
    * Initial setup
@@ -413,8 +408,28 @@ window.resetCharacterPosition = resetCharacterPosition
     characterRef.current.lockRotations(true);
 
   }, []);
-
   useFrame((state, delta) => {
+    cube2bb.setFromObject(characterModelRef.current)
+
+
+    if(window.key){
+      if(cube2bb.intersectsBox(cube1bb)){
+        window.colorlock =true
+      }
+      else if(cube2bb.intersectsBox(cube3bb)){
+        window.colorlock2 =true
+      }
+      else if(cube2bb.intersectsBox(cube4bb)){
+        window.colorlock3 =true
+      }
+      
+      else{
+     
+      }
+          }
+    else{
+    
+    }
     /**
      * Apply character position to directional light
      */
@@ -431,9 +446,42 @@ window.resetCharacterPosition = resetCharacterPosition
      */
 
     const { forward, backward, leftward, rightward, jump, run } = globalFunction(window.globalVariable)
+    //  C3pos  = characterModelRef.current.parent.parent.children[8].position
+    var C3posX  = characterModelRef.current.parent.parent.children[8].position.x.toFixed(3)
+    var C3posY  = characterModelRef.current.parent.parent.children[8].position.y.toFixed(3)
+    var C3posZ  = characterModelRef.current.parent.parent.children[8].position.z.toFixed(3)
+    
+    // while(C3posX>7){
+    //   console.log("more than seven")
+    // }
+
+    if (characterRef.current.translation().x ==0 && characterRef.current.translation().z ==0 ){
+      window.lock = true
+      window.toi = 0
+    }
+    else {
+      window.lock = false
+      
+    }
+  
+
+    // console.log(characterRef.current)
+
+
+
+    var objpositionX = characterRef.current.translation().x
+    var objpositionY = characterRef.current.translation().y
+    var objpositionZ = characterRef.current.translation().z
+    var objposition = [objpositionX.toFixed(1),objpositionY.toFixed(1),objpositionZ.toFixed(1)]
+
+    
+
+    // addPosition(pos,objposition)
+    // console.log(pos)
+  
     
     
-    // console.log()
+    // console.log(C3posX)
     
 
 
@@ -696,7 +744,7 @@ window.resetCharacterPosition = resetCharacterPosition
   return (
     <RigidBody
       colliders={false}
-      position={[5,3,0]}
+      position={[0,3,0]}
       friction={-0.5}
       ref={characterRef}
     >
