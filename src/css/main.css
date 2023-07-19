@@ -17,7 +17,7 @@ table {
 }
 .container{
   width: 100%;
-  background-color: rgb(194, 194, 15);
+
   height: 100%;
   overflow:auto;
 }
@@ -27,11 +27,11 @@ table {
   padding-left: 60%;
   width: 50%;
   height: 680px;
-  background-color: rgb(105, 47, 81);
+
   float:right;
 }
 #game-canvas{
-  width: 50%;
+  width: 45%;
   float:right;
   height: 1000px;
   background-color: blue;
