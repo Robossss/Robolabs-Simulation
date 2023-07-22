@@ -14,6 +14,9 @@ import { useControls } from "leva";
 import {RotatingCube} from "./RotatingCube.jsx"
 import { RotatingCube2 } from "./RotatingCubes2.jsx";
 import { RotatingCube3 } from "./RotatinngCube3.jsx";
+import { RotatingCube4 } from "./RotatingCube4.jsx";
+import {RotatingCube5} from "./RotatingCube5.jsx";
+import {RotatingCube6} from "./RotatingCube6.jsx";
 
 
 export default function Experience() {
@@ -62,29 +65,32 @@ export default function Experience() {
         <RotatingCube/>
         <RotatingCube2/>
         <RotatingCube3/>
+        <RotatingCube4/>
+        <RotatingCube5/>
+        <RotatingCube6/>
    
 
 
 
         {/* Rough plan */}
-        <RoughPlane />
+        {/* <RoughPlane /> */}
   
 
         {/* Slopes and stairs */}
-        <Slopes />
+        {/* <Slopes /> */}
 
 
         {/* Small steps */}
-        <Steps />
+        {/* <Steps /> */}
 
         {/* Rigid body objects */}
-        <RigidObjects />
+        {/* <RigidObjects /> */}
 
         {/* Floating platform */}
-        <FloatingPlatform />
+        {/* <FloatingPlatform /> */}
 
         {/* Dynamic platforms */}
-        <DynamicPlatforms />
+        {/* <DynamicPlatforms /> */}
 
         {/* Floor */}
         <Floor />
