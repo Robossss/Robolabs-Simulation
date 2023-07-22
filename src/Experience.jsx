@@ -62,13 +62,13 @@ export default function Experience() {
           <Character />
         </KeyboardControls>
 
-        {/* <RotatingCube/>
+        <RotatingCube/>
         <RotatingCube2/>
         <RotatingCube3/>
         <RotatingCube4/>
         <RotatingCube5/>
         <RotatingCube6/>
-    */}
+   
 
 
 
@@ -81,7 +81,7 @@ export default function Experience() {
 
 
         {/* Small steps */}
-        {/* <Steps /> */}
+        <Steps />
 
         {/* Rigid body objects */}
         <RigidObjects />

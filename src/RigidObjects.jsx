@@ -5,14 +5,14 @@ export default function RigidObjects() {
   return (
     <>
       {/* Rigid body boxes */}
-      <RigidBody position={[0, 0, 7]}>
+      <RigidBody position={[15, 0, 0]}>
         <Text
           scale={0.5}
           color="black"
           maxWidth={10}
           textAlign="center"
           position={[0, 1, 0]}
-          rotation={[0, -Math.PI , 0]}
+          rotation={[0, -Math.PI / 2, 0]}
         >
           mass: 1
         </Text>
@@ -21,7 +21,7 @@ export default function RigidObjects() {
           <meshStandardMaterial color={"lightsteelblue"} />
         </mesh>
       </RigidBody>
-      {/* <RigidBody position={[15, 0, -2]}>
+      <RigidBody position={[15, 0, -2]}>
         <Text
           scale={0.5}
           color="black"
@@ -37,7 +37,7 @@ export default function RigidObjects() {
           <meshStandardMaterial color={"lightsteelblue"} />
         </mesh>
       </RigidBody>
-      <RigidBody position={[15, 0, -5]}>
+      {/* <RigidBody position={[15, 0, -5]}>
         <Text
           scale={0.5}
           color="black"
@@ -71,8 +71,8 @@ export default function RigidObjects() {
         <mesh receiveShadow>
           <cylinderGeometry args={[2.5, 0.2, 0.5]} />
           <meshStandardMaterial color={"lightsteelblue"} />
-        </mesh> */}
-      {/* </RigidBody> */} 
+        </mesh>
+      </RigidBody> */} 
     </>
   );
 }
