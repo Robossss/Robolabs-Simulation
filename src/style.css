@@ -15,7 +15,7 @@ body, */
   );
 }
 
-.controlKeys{
+.controlKeys {
   position: absolute;
   width: 25%;
   left: 10%;
@@ -25,4 +25,38 @@ body, */
   -webkit-user-drag: none;
   -webkit-user-select: none;
   -ms-user-select: none;
+}
+.buttons {
+  background-color: #A301AA;
+  padding: 1rem;
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+button {
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);;
+  text-transform: capitalize;
+  border-radius: 1.5rem;
+  background-image: linear-gradient(180deg, #fbbb07 0%, #dc6a00 100%);
+  padding: 1rem 2.5rem;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  color: white;
+  font-weight: 700;
+  white-space: nowrap;
+      transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+}
+button:hover {
+  scale: 1.1;
+}
+
+
+header {
+  background-color: #A301AA;
+  width: 100vw;
+  height: 2rem;
 }

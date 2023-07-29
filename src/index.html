@@ -6,17 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <script type="module" src="./index.js"></script>
-    <title>Control</title>
+    <title>Robolabs Simulation</title>
 </head>
 <body>
     <div class="container">
-        <div class="game-edit">       
-            <button id="button_run" onclick="run_code()">
-                Run Code Block
-              </button> 
-            <button id="button_reset" onclick="reset_car()">
-            Reset Car
-            </button>                
+        <div class="game-edit">  
+            <div class="buttons">
+
+                <button id="button_run" onclick="run_code()">
+                    Run Code Block
+                </button> 
+                <button id="button_reset" onclick="reset_car()">
+                    Reset Car
+                </button>                
+            </div>     
             <iframe id="blockly" src="./blockly.html" width="100%" height="100%"></iframe>
         </div>
         <div id="root">

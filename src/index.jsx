@@ -21,6 +21,9 @@ const root = ReactDOM.createRoot(document.querySelector("#root"));
 
 root.render(
   <>
+  <header>
+    <img src="/logo1.svg" alt="" />
+  </header>
   <Leva collapsed/>
   <Canvas
     shadows
