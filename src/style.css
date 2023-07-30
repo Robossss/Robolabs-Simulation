@@ -1,7 +1,7 @@
 /* html,
 body, */
 #root {
-  position: fixed;
+  /* position: fixed; */
   top: 0;
   left: 0;
   width: 50%;
@@ -13,6 +13,18 @@ body, */
     rgba(253, 228, 255, 1) 0%,
     rgba(124, 156, 254, 1) 100%
   );
+}
+.container {
+  /* margin-top: 70px; */
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+  
+}
+.game-edit {
+  width: 50%;
+  height: 100%;
+
 }
 
 .controlKeys {
@@ -31,8 +43,8 @@ body, */
   padding: 1rem;
   display: flex;
   gap: 1rem;
-  margin-top: 1.5rem;
 }
+
 
 button {
   box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);;
@@ -56,7 +68,14 @@ button:hover {
 
 
 header {
+  z-index: 10;
+  color: white;
   background-color: #A301AA;
-  width: 100vw;
-  height: 2rem;
+  /* width: 100%; */
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem ;
 }
+

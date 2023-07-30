@@ -9,19 +9,15 @@
     <title>Robolabs Simulation</title>
 </head>
 <body>
-    <div class="container">
-        <div class="game-edit">  
-            <div class="buttons">
-
-                <button id="button_run" onclick="run_code()">
-                    Run Code Block
-                </button> 
-                <button id="button_reset" onclick="reset_car()">
-                    Reset Car
-                </button>                
-            </div>     
-            <iframe id="blockly" src="./blockly.html" width="100%" height="100%"></iframe>
+    <header>
+        <img src="/logo.svg" alt="">
+        <div class="">
+            <h1>Coding Area</h1>
+            <p>Lesson 1 Practical</p>
         </div>
+        <button>Back to Lesson Area</button>
+    </header>
+    <div class="container">
         <div id="root">
             <script type="module" src="./index.jsx"></script>
             <!-- <script>
@@ -36,6 +32,18 @@
                 }
             </script> -->
         </div>          
+        <div class="game-edit">  
+            <div class="buttons">
+
+                <button id="button_run" onclick="run_code()">
+                    Run Code Block
+                </button> 
+                <button id="button_reset" onclick="reset_car()">
+                    Reset Urus
+                </button>                
+            </div>     
+            <iframe id="blockly" src="./blockly.html" width="100%" height="100%"></iframe>
+        </div>
             
         </div>
     </div>

@@ -41,7 +41,7 @@ export default function Experience() {
     <>
       {/* <OrbitControls makeDefault /> */}
 
-      <Perf position="top-left" />
+      {/* <Perf position="top-left" /> */}
 
       <Grid
         infiniteGrid
