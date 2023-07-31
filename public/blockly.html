@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <title>Blockly Editor</title>
+        <link rel="stylesheet" type="text/css" href="css/main.css">
+        <script src="blockly/blockly_compressed.js"></script>
+        <script src="blockly/blocks_compressed.js"></script>
+        <script src="blockly/msg/js/en.js"></script>
+        <script src="blockly/javascript_compressed.js"></script>
+        <script src="custom_blocks.js"></script>
+    </head>
+      <script>
+      function blocklyInit(){
+        //Blockly.inject(document.body, {toolbox: document.getElementById('toolbox')});
+        var workspace = Blockly.inject('blocklyDiv',
+          {media: 'blockly/media/',
+          toolbox: document.getElementById('toolbox')}
+        );
+        // Let the top-level application know that Blockly is ready.
+        window.parent.blockly_loaded(Blockly);
+      };
+      </script>
+<body onload="blocklyInit()">
+
+  <div id="blocklyDiv"></div>
+  <xml id="toolbox" style="display: none">
+    <h1>Hello</h1>
+    <block type="actor_move_forward"></block>
+    <block type="actor_move_backward"></block>
+    <block type="actor_jump_forward"></block>
+    <block type="actor_turn"></block>
+    <block type="controls_repeat_ext"></block>
+    <block type="math_number"></block>
+  </xml>
+
+  </body>
+</html>

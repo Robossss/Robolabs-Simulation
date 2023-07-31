@@ -11,13 +11,10 @@ h1 {
   font-weight: normal;
   font-size: 140%;
 }
-table {
-  height: 100%;
-  width: 100%;
-}
 .container{
   width: 100%;
 
+  background-color: rgb(194, 194, 15);
   height: 100%;
   overflow:auto;
 }
