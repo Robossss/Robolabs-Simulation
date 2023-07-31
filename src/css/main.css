@@ -11,45 +11,8 @@ h1 {
   font-weight: normal;
   font-size: 140%;
 }
-table {
-  height: 100%;
-  width: 100%;
-}
 .container{
-  width: 100%;
-
+  background-color: rgb(194, 194, 15);
   height: 100%;
   overflow:auto;
-}
-
-.game-edit{
-  left: 40px;
-  padding-left: 60%;
-  width: 50%;
-  height: 680px;
-
-  float:right;
-}
-#game-canvas{
-  width: 45%;
-  float:right;
-  height: 1000px;
-  background-color: blue;
-}
-
-#blockly
-{
-  border:1px solid #000000;
-  padding-left:0;
-  height:700px;
-}
-#blockly_editor
-{
-  background-color: #000000;
-  width:50px;
-}
-
-#button_run
-{
-  margin-left:2%;
 }
