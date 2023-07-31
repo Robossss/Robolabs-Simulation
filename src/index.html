@@ -11,11 +11,22 @@
 <body>
     <header>
         <img src="/logo.svg" alt="">
-        <div class="">
-            <h1>Coding Area</h1>
-            <p>Lesson 1 Practical</p>
-        </div>
+        <div class="fonttopic">
+            <p style="font-size: 20px;">Coding Area</p>
+            <p style="font-size: 16px;">Lesson 1 Practical</p>
+        </div>  
+        <div class="mydiv">
+            <button onclick="run_code()">
+                Run Code Block
+            </button>      
+            <button class="button1" onclick="reset_car()">
+                Reset Urus
+            </button>    
+            
         <button>Back to Lesson Area</button>
+
+        </div> 
+
     </header>
     <div class="container">
         <div id="root">
@@ -33,15 +44,7 @@
             </script> -->
         </div>          
         <div class="game-edit">  
-            <div class="buttons">
-
-                <button id="button_run" onclick="run_code()">
-                    Run Code Block
-                </button> 
-                <button id="button_reset" onclick="reset_car()">
-                    Reset Urus
-                </button>                
-            </div>     
+   
             <iframe id="blockly" src="./blockly.html" width="100%" height="100%"></iframe>
         </div>
             

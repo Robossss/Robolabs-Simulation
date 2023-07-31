@@ -14,6 +14,9 @@ import { useControls } from "leva";
 import {RotatingCube} from "./RotatingCube.jsx"
 import { RotatingCube2 } from "./RotatingCubes2.jsx";
 import { RotatingCube3 } from "./RotatinngCube3.jsx";
+import { RotatingCube4 } from "./RotatingCube4.jsx";
+import {RotatingCube5} from "./RotatingCube5.jsx";
+import {RotatingCube6} from "./RotatingCube6.jsx";
 
 
 export default function Experience() {
@@ -59,10 +62,13 @@ export default function Experience() {
           <Character />
         </KeyboardControls>
 
-        <RotatingCube/>
+        {/* <RotatingCube/>
         <RotatingCube2/>
         <RotatingCube3/>
-   
+        <RotatingCube4/>
+        <RotatingCube5/>
+        <RotatingCube6/>
+    */}
 
 
 
@@ -75,7 +81,7 @@ export default function Experience() {
 
 
         {/* Small steps */}
-        <Steps />
+        {/* <Steps /> */}
 
         {/* Rigid body objects */}
         <RigidObjects />

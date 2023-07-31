@@ -422,6 +422,15 @@ const cube2bb = new THREE.Box3(new THREE.Vector3(), new THREE.Vector3());
       else if(cube2bb.intersectsBox(cube4bb)){
         window.colorlock3 =true
       }
+      else if(cube2bb.intersectsBox(cube5bb)){
+        window.colorlock5 =true
+      }
+      else if(cube2bb.intersectsBox(cube7bb)){
+        window.colorlock6 =true
+      }
+      else if(cube2bb.intersectsBox(cube8bb)){
+        window.colorlock8 =true
+      }
       
       else{
      
