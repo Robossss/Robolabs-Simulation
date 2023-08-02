@@ -73,24 +73,24 @@ export default function Experience() {
 
 
         {/* Rough plan */}
-        <RoughPlane />
+        {/* <RoughPlane /> */}
   
 
         {/* Slopes and stairs */}
-        <Slopes />
+        {/* <Slopes /> */}
 
 
         {/* Small steps */}
-        <Steps />
+        {/* <Steps /> */}
 
         {/* Rigid body objects */}
         <RigidObjects />
 
         {/* Floating platform */}
-        <FloatingPlatform />
+        {/* <FloatingPlatform /> */}
 
         {/* Dynamic platforms */}
-        <DynamicPlatforms />
+        {/* <DynamicPlatforms /> */}
 
         {/* Floor */}
         <Floor />
