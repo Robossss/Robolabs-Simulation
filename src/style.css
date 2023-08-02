@@ -51,8 +51,9 @@ body, */
   margin: 20px;
 }
 .empty {
-  /* flex: 1; */
-  width: 100px;
+  flex: 0.01;
+  /* width: 40px; */
+
 }
 
 .controlKeys {
