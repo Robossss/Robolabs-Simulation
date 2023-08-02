@@ -21,7 +21,7 @@ const root = ReactDOM.createRoot(document.querySelector("#root"));
 
 root.render(
   <>
-  <Leva collapsed/>
+  <Leva collapsed position={{x:10,y:10}}/>
   <Canvas
     shadows
     camera={{
