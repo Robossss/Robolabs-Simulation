@@ -2,9 +2,9 @@ import * as THREE from "three";
 import { useFrame } from "@react-three/fiber";
 import { useRef,useState } from "react";
 
-export function RotatingCube3() {
+export default function RotatingCube2() {
   const rotatePlatformRef = useRef();
-  const cube1bb = new THREE.Box3(new THREE.Vector3(), new THREE.Vector3());
+  const cube4bb = new THREE.Box3(new THREE.Vector3(), new THREE.Vector3());
   // window.colorlock = false
   const [color, setcolor] = useState(true);
 
@@ -18,18 +18,18 @@ export function RotatingCube3() {
     rotatePlatformRef.current.rotation.y = rotationAngle;
 
     // Update bounding box
-    cube1bb.setFromObject(rotatePlatformRef.current);
+    cube4bb.setFromObject(rotatePlatformRef.current);
     // console.log(cube1bb)
-    window.cube1bb = cube1bb
+    window.cube4bb = cube4bb
     
 
-    if(cube1bb){
+    if(cube4bb){
       window.key =true
     }
     else{
       window.key = false
     }
-    if(window.colorlock){
+    if(window.colorlock3){
       setcolor("green")
     }
     else{
@@ -41,7 +41,7 @@ export function RotatingCube3() {
   });
 
   return (
-    <mesh ref={rotatePlatformRef} position={[5, 0.3, 0]}>
+    <mesh ref={rotatePlatformRef} position={[0, 0.3, 8.9]}>
       <boxGeometry args={[1, 1, 1]} />
       <meshStandardMaterial color={color || 'green'} transparent={true} opacity={0.89} />
     </mesh>

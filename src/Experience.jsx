@@ -11,12 +11,12 @@ import RigidObjects from "./RigidObjects.jsx";
 import FloatingPlatform from "./FloatingPlatform.jsx";
 import DynamicPlatforms from "./DynamicPlatforms.jsx";
 import { useControls } from "leva";
-import {RotatingCube} from "./RotatingCube.jsx"
-import { RotatingCube2 } from "./RotatingCubes2.jsx";
-import { RotatingCube3 } from "./RotatinngCube3.jsx";
-import { RotatingCube4 } from "./RotatingCube4.jsx";
-import {RotatingCube5} from "./Rotatingcube5.jsx";
-import {RotatingCube6} from "./RotatingCube6.jsx";
+import RotatingCube from "./RotatingCube.jsx"
+import RotatingCube2 from "./RotatingCube2.jsx";
+import RotatingCube3 from "./RotatingCube3.jsx";
+import RotatingCube4 from "./RotatingCube4.jsx";
+import RotatingCube5 from "./RotatingCube5.jsx";
+import RotatingCube6 from "./RotatingCube6.jsx";
 
 
 export default function Experience() {

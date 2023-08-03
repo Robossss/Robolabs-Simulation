@@ -2,7 +2,7 @@ import * as THREE from "three";
 import { useFrame } from "@react-three/fiber";
 import { useRef,useState } from "react";
 
-export function RotatingCube6() {
+export default function RotatingCube6() {
   const rotatePlatformRef = useRef();
   const cube8bb = new THREE.Box3(new THREE.Vector3(), new THREE.Vector3());
   // window.colorlock = false
