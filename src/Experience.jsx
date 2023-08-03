@@ -15,8 +15,8 @@ import RotatingCube from "./RotatingCube.jsx"
 import RotatingCube2 from "./RotatingCube2.jsx";
 import RotatingCube3 from "./RotatingCube3.jsx";
 import RotatingCube4 from "./RotatingCube4.jsx";
-// import RotatingCube5 from "./RotatingCube5.jsx";
-import RotatingCube6 from "./RotatingCube6.jsx";
+import RotatingCube5 from "./Rotatingcube5.jsx";
+import RotatingCube6 from "./Rotatingcube6.jsx";
 
 
 export default function Experience() {
