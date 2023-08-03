@@ -15,7 +15,7 @@ import {RotatingCube} from "./RotatingCube.jsx"
 import { RotatingCube2 } from "./RotatingCubes2.jsx";
 import { RotatingCube3 } from "./RotatinngCube3.jsx";
 import { RotatingCube4 } from "./RotatingCube4.jsx";
-import {RotatingCube5} from "./RotatingCube5.jsx";
+import {RotatingCube5} from "./Rotatingcube5.jsx";
 import {RotatingCube6} from "./RotatingCube6.jsx";
 
 
