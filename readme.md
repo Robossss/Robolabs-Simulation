@@ -18,10 +18,3 @@ npm run dev
 # Build for production in the dist/ directory
 npm run build
 ```
-
-
-## Contributions
-
-I appreciate your interest in this project! If you have any feedback, suggestions, or resources related to the controller or the next steps, please feel free to share. 
-
-Thank you!
