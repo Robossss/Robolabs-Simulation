@@ -1,0 +1,136 @@
+/* html,
+body, */
+#root {
+  /* position: fixed; */
+  top: 0;
+  left: 0;
+  width: 50%;
+  float: right;
+  height: 100%;
+  background: rgb(253, 228, 255);
+  background: linear-gradient(
+    0deg,
+    rgba(253, 228, 255, 1) 0%,
+    rgba(124, 156, 254, 1) 100%
+  );
+}
+.fonttopic{
+  color: #F4F6FF;
+  text-align: center;
+  font-family: Inter;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+}
+.fonttopic p {
+  margin: 0; 
+  padding: 0; 
+}
+.large-font {
+  font-size: 20px;
+}
+.small-font {
+  font-size: 15;
+}
+
+.container {
+  /* margin-top: 70px; */
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+  
+}
+.game-edit {
+  width: 50%;
+  height: 100%;
+
+}
+.mydiv {
+  /* padding: 100px; */
+  margin: 20px;
+}
+
+.controlKeys {
+  position: absolute;
+  width: 25%;
+  left: 10%;
+  bottom: 10%;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+.buttons {
+  background-color: #ba93bb;
+  padding: 1rem;
+  display: flex;
+  gap: 2rem;
+}
+
+
+button {
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);;
+  text-transform: capitalize;
+  /* width: 10.0625rem; */
+  height: 3.0;
+  border-radius: 1.5rem;
+  background-image: linear-gradient(180deg, #fbbb07 0%, #dc6a00 100%);
+  padding: 0.8rem 1.2rem;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  margin: 5px;
+
+
+  color: white;
+  font-weight: 700;
+  white-space: nowrap;
+      transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+}
+
+button {
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);;
+  text-transform: capitalize;
+  /* width: 10.0625rem; */
+  height: 3.0;
+  border-radius: 1.875rem;
+/* background: linear-gradient(180deg, #9EFB07 0%, #00870E 100%); */
+box-shadow: 0px 8px 28px 7px rgba(0, 0, 0, 0.25);
+  border-radius: 1.5rem;
+  background-image: linear-gradient(180deg, #fbbb07 0%, #dc6a00 100%);
+  padding: 0.8rem 1.2rem;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  margin: 5px;
+
+
+  color: white;
+  font-weight: 700;
+  white-space: nowrap;
+      transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+}
+
+button:hover {
+  scale: 1.1;
+}
+
+
+header {
+  z-index: 10;
+  color: white;
+  background-color: #A301AA;
+  /* width: 100%; */
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem ;
+}
+
